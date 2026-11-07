@@ -178,9 +178,6 @@ mark.old { background: var(--bad-soft); color: var(--bad); padding: 0 .15em; bor
 
 /* ---------- shared nav ---------- */
 .site-header { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; align-items: center; justify-content: space-between; }
-.site-nav { display: flex; gap: .3rem; flex-wrap: wrap; }
-.site-nav a { text-decoration: none; font-weight: 600; font-size: .92rem; color: var(--muted); padding: .45rem .8rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
-.site-nav a[aria-current="page"] { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
 .wide { max-width: 1240px; margin: 0 auto; padding: 1rem 16px 2rem; }
 .muted { color: var(--muted); }
 
@@ -359,7 +356,6 @@ body.embed .legend { padding: .8rem; font-size: .9rem; }
 .logo { width: 28px; height: 28px; }
 .brand h1 { font-size: 1.25rem; margin: 0; line-height: 1.2; }
 .brand .tagline { font-size: .85rem; }
-.site-nav a { padding: .35rem .75rem; font-size: .88rem; }
 .pf-tagline { margin: 0 0 .5rem; color: var(--muted); font-size: .92rem; font-weight: 600; }
 
 /* ---------- summary bar, second row ---------- */

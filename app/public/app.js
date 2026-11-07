@@ -480,6 +480,7 @@ function setCollapsed(c) {
   try { localStorage.setItem(SIDEBAR_KEY, c ? "1" : "0"); } catch {}
 }
 
+let app_hashUsed = false;
 function showView(view, focus) {
   VIEW = view;
   $$(".path-content .tab-panel").forEach((pnl) => {
@@ -591,6 +592,7 @@ function render() {
   renderCityCard(city);
   renderPath(city, p);
   if (VIEW == null) VIEW = firstUnfinished();
+  if (location.hash === "#old-law" && !app_hashUsed) { app_hashUsed = true; VIEW = "stale"; }
   showView(VIEW);
 }
 
