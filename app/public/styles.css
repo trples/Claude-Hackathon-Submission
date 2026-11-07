@@ -651,3 +651,20 @@ body.embed .legend { padding: .8rem; font-size: .9rem; }
 .guide .step-title .dur-chip { display: inline-flex; }
 .todo-list > li.li-note { list-style: none; margin-left: -1.2rem; }
 .todo-list > li.li-note .soft-note { margin-top: 0; }
+
+/* paperwork folder (Step 2) */
+.doc-drop .dd-zone { display: flex; flex-direction: column; align-items: center; gap: .25rem; padding: 1.4rem 1rem; margin-top: .6rem; border: 2px dashed var(--line); border-radius: 12px; text-align: center; cursor: pointer; }
+.doc-drop .dd-zone:hover, .doc-drop .dd-zone:focus-visible, .doc-drop .dd-zone.over { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 7%, transparent); outline: none; }
+.doc-drop .dd-link { color: var(--brand); text-decoration: underline; }
+.doc-drop .dd-sum { margin: .6rem 0 0; font-weight: 600; }
+.doc-drop .dd-sum:empty { display: none; }
+.dd-list { list-style: none; padding: 0; margin: .4rem 0 0; }
+.dd-list li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.dd-file { display: flex; flex-direction: column; min-width: 0; flex: 1 1 14rem; }
+.dd-name { font-weight: 600; overflow-wrap: anywhere; }
+.dd-state { font-size: .88rem; }
+.dd-state.ok { color: var(--ok, #1a7f37); }
+.dd-ctl { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.dd-ctl select { max-width: 16rem; }
+.doc-files { display: block; font-size: .88rem; margin-top: .2rem; overflow-wrap: anywhere; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

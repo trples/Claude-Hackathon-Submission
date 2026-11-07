@@ -294,6 +294,7 @@ function buildPath(city, p) {
   const docStatus = city.documents_source?.status;
   const tags = (d) => [d.sign ? `<span class="tag sign">Sign</span>` : "", d.notary ? `<span class="tag notary">Notarize</span>` : "", d.record ? `<span class="tag record">Record with County Recorder</span>` : ""].join("");
   const li = (d, i, prefix, status) => `<li><input type="checkbox" id="${prefix}${i}"><label for="${prefix}${i}"><span class="name">${esc(d.name)}</span>${ntag(status)}<span class="doc-what">${esc(docLine(d.name))}</span>${d.how ? `<span class="doc-how">${/^https?:/.test(d.how) ? `<a href="${esc(d.how)}" target="_blank" rel="noopener">Get the form <span aria-hidden="true">↗</span></a>` : esc(d.how)}</span>` : ""}${tags(d) ? `<span class="doc-tags">${tags(d)}</span>` : ""}</label></li>`;
+  BODY[2].push(DocDrop.html());
   BODY[2].push(`<section class="step-sec paperwork">
     <div class="print-only"><h1>ADU paperwork checklist — ${esc(city.name)}</h1><p>${esc(TYPE_LABEL[p.type])}, ${p.size || "?"} sq ft. Printed from ADU Pathfinder (prototype, not legal advice). Confirm every item with the city.</p></div>
     <div class="row no-print sec-head"><h3>Paperwork checklist</h3><button class="btn ghost" id="print-btn">Print packet</button></div>
@@ -514,6 +515,7 @@ function renderPath(city, p) {
       </nav>`;
   }
   const pb = $("#print-btn"); if (pb) pb.onclick = () => printTab(2);
+  DocDrop.attach();
   renderCityVsState(city, B.relevantFlags);
   LAST = { DUR: B.DUR };
   renderSidebar(B.DUR);
